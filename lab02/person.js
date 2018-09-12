@@ -1,8 +1,10 @@
-function Person(name, birthdate, friends) {
+//Person
+
+function Person(name, birthdate, friends, greeting) {
     this.name = name;
     this.birthdate = birthdate;
     this.friends = friends;
-    this.greeting = "I'm a person";
+    this.greeting = greeting;
 }
 
 Person.prototype.printGreeting = function () {
@@ -29,13 +31,21 @@ Person.prototype.isFriends = function (person) {
     return this.friends.indexOf(person) > -1;
 }
 
+//Student
+
+function Student(name, birthdate, friends, greeting, major){
+    Person.call(this, name, birthdate, friends, greeting);
+    this.major = major;
+}
+Student.prototype = Object.create(Person.prototype)
+
 // testing
 console.log("testing:")
-var person1 = new Person("Person1", "1970/01/01", [person2, person3])
+var person1 = new Person("Person1", "1970/01/01", [person2, person3], "I'm person1")
 console.log(person1)
-var person2 = new Person("Person2", "1970/02/02", [person1])
+var person2 = new Person("Person2", "1970/02/02", [person1], "I'm person2")
 console.log(person2)
-var person3 = new Person("Person3", "1970/03/03", [person1])
+var person3 = new Person("Person3", "1970/03/03", [person1], "I'm person3")
 console.log(person3)
 
 person1.printGreeting()
@@ -44,4 +54,7 @@ console.log("person3 friends with person1 (true)?:", person3.isFriends(person1))
 console.log("person3 friends with person2 (false)?:", person3.isFriends(person2))
 person3.addFriend(person2)
 console.log("person3 should now be friends with person2:", person3.isFriends(person2))
-console.log("All tests passed")
+
+var student1 = new Student("Student1", "1970/01/01", [person1], "I'm student1", "Computer Science")
+console.log(student1)
+console.log("Is student1 an instanceof Person?:", student1 instanceof Person)
