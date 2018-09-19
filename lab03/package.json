@@ -1,0 +1,14 @@
+{
+  "name": "lab03",
+  "version": "1.0.0",
+  "description": "Lab 3 for CS 336",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tpt3",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
