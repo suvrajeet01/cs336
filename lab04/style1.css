@@ -1,0 +1,28 @@
+/* page font */
+body {
+    font: 16px "Comic Sans MS", cursive;
+    background: url("Blue-rule.png");
+  }
+  
+  /* paragraphs */
+  p {
+    color: #0000ff;
+  }
+  p::before {
+    content: " " url("Yellow-pin.png")
+  }
+  #first {
+    font-style: italic;
+  }
+  
+  /* initial letters */
+  strong {
+    background-color: #ddf; 
+    color: #ff0000;
+    font: 200% serif;
+  }
+  
+  .spinach {
+    color: #008000;
+    background-color: #ddf;
+  }
