@@ -20,6 +20,9 @@ h3:before {
     counter-increment: myletter;
     font-weight: bold;
   }
-ul {
-    border: 5px solid lightblue;
-}
+ul, #numbered {
+    border: 1em solid #69b;
+    padding-right:1em;
+  }
+  ul, #numbered {float: left;}
+  h3 {clear: left;}
