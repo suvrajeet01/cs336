@@ -1,0 +1,6 @@
+Exercise 6.1
+    a. With a browser I can only really test GET. With curl I can test every method, because it allows you to specify any of these methods.
+    b. A 404 because it isn't defined on the server.
+Exercise 6.2
+    a. GET, which will get the form. And POST which sends the data you entered into the form.
+    b. The form data sent back to the server is JSON format. The keys in the JSON don't match the labels for the fields on the form. The data itself that was entered is not modified.
