@@ -1,0 +1,15 @@
+{
+  "name": "lab07",
+  "version": "1.0.0",
+  "description": "Lab07 for CS 336",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tpt3",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-status-codes": "^1.3.0"
+  }
+}
