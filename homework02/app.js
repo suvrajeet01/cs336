@@ -74,6 +74,28 @@ app.get('/person/:id', (req, res) => {
     }
 });
 
+app.put('/person/:id', (req, res) => {
+    person = findID(req.params.id);
+    if (person != undefined) {
+        people.splice(people.indexOf(person), 1);
+        new_person = new Person(req.body.first_name, req.body.last_name, req.body.id, req.body.start_date);
+        people.push(new_person);
+        res.json(new_person);
+    } else {
+        res.sendStatus(404);
+    }
+});
+
+app.delete('/person/:id', (req, res) => {
+    person = findID(req.params.id);
+    if (person != undefined) {
+        people.splice(people.indexOf(person), 1);
+        res.json(person);
+    } else {
+        res.sendStatus(404);
+    }
+});
+
 // the full name (i.e., first & last concatenated into one string) for the person with the given ID 
 app.get('/person/:id/name', (req, res) => {
     person = findID(req.params.id);
