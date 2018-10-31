@@ -1,0 +1,13 @@
+Exercise 9.1
+
+What good has this bundling done? How big is the new bundle file? Check the Chrome DevTools network log to see what files are being loaded.
+    Everything is loaded into one file and loaded from one place. We no longer need to wait to load libraries from other sources before the site is loaded. In addition to that we know that since everything is packaged in that one file, if the site is loaded each library will be as well. Without it, one of the CDNs could be down causing a needed library to not work which our app relies on.
+What role did Babel play in the bundling?
+    Babel pre preprocesses/compiles all javascript to javascript which will be supported well across all browsers.
+Can you just load file:///path…/index.html using the browser? Why or why not?
+    You can load it, but it doesn't work. The server side isn't running without node which means comments aren't loaded, stored, or sent anywhere.
+In webpack.config.js, what does the loader test entry test: /\.jsx?$/ do?
+    It puts any JSX files through babel.
+
+Exercise 9.2
+
