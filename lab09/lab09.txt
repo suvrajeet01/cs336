@@ -11,3 +11,19 @@ In webpack.config.js, what does the loader test entry test: /\.jsx?$/ do?
 
 Exercise 9.2
 
+Check out the new dist/index.html and dist/bundle.js. How are they different from the previous versions?
+    index.html now only contains one line in the body to load the javascript.
+What good is it to replace the CDN library loads with module imports?
+    We don't use everything in each library so by importing only what we need webpack can only pack in those parts.
+Check the network log. How many of the new modules you built are being loaded? How about the CSS file?
+    The only file being loaded is bundle.js everything is bundled into that one file, including the CSS.
+
+Exercise 9.3
+
+Try out both ports and explain the difference between them.
+    localhost:3001 — Try editing one of the React module files. Explain what happens, both to the displayed SPA webpage and to the bundle/index files.
+    localhost:3000 — Try loading /api/comments. Explain what you get. Does the SPA page running on this port change (due to the edits made above) as well?
+For more information on this two-server configuration, see Webpack’s HMR & React-Hot-Loader — The Missing Manual.
+    Wasn't able to get this working. Followed the instructions above but I still have nothing running on port 3001, and the standard app is still running on 3000.
+Is it worth all this trouble to build a development configuration?
+    It didn't seem like that much work. Eventually not having to manually restart the server when modifying files would pay off since the time saved will out weigh the time spent to set it up.
