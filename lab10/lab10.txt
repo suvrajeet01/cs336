@@ -1,0 +1,31 @@
+Exercise 10.1
+
+Compare and contrast MongoDB and the SQL databases you’ve used before. Are there things that one can do that the other can’t?
+    MongoDB seems to let you do "what you want" more than SQL. SQL might be more like the C of databases, where you need to be very specific about everything. MongoDB seems more like JavaScript in that you can do your own thing. I think anything you'd be able to do in Mongo you'd also be able to do in SQL, it just might be easier in Mongo since you can make your own rules.
+You could run MongoDB locally. What advantages and/or disadvantages would that bring with respect to the cloud database you have now?
+    Some advantages would be more storage, faster, and in my direct control. But then it would only be accessible on this machine or others within the network when this machine is running, there is no easy way to work from another machine and move the database there as needed. With the cloud database, it can be easily accessed anywhere and doesn't require any special configuration on my end.
+You’ve built a “sandbox” database on mLab. Could you use this for a production database? Why or why not?
+    I don't see any reason why not, eventually the 0.5GB limit may become an issue. The "sandbox" plan is intended for development not production but it should work fine for a production database, assuming you don't need anything found in the paid plans.
+
+Exercise 10.2
+For this integration of mLab into your application, was it better to run the modified server (npm start) or the full Webpack development environment (npm run dev)? Why?
+    I'm currently unable to get it working with either. Both I get the error: 
+        E:\Users\Theron\git\cs336\lab10\node_modules\mongodb\lib\utils.js:98
+            process.nextTick(function() { throw err; });
+                                        ^
+
+        SyntaxError: Unexpected token o in JSON at position 1
+            at JSON.parse (<anonymous>)
+            at E:\Users\Theron\git\cs336\lab10\server.js:44:23
+            at handleCallback (E:\Users\Theron\git\cs336\lab10\node_modules\mongodb\lib\utils.js:95:56)
+            at E:\Users\Theron\git\cs336\lab10\node_modules\mongodb\lib\cursor.js:852:16
+            at handleCallback (E:\Users\Theron\git\cs336\lab10\node_modules\mongodb-core\lib\cursor.js:171:5)
+            at setCursorDeadAndNotified (E:\Users\Theron\git\cs336\lab10\node_modules\mongodb-core\lib\cursor.js:506:3)
+            at nextFunction (E:\Users\Theron\git\cs336\lab10\node_modules\mongodb-core\lib\cursor.js:652:7)
+            at Cursor.next [as _next] (E:\Users\Theron\git\cs336\lab10\node_modules\mongodb-core\lib\cursor.js:693:3)
+            at fetchDocs (E:\Users\Theron\git\cs336\lab10\node_modules\mongodb\lib\cursor.js:848:10)
+            at E:\Users\Theron\git\cs336\lab10\node_modules\mongodb\lib\cursor.js:871:7
+Explain what happens when you modify the database using mLab’s web interface rather than your application? Try adding/updating/deleting comment documents.
+    I'm not sure since I haven't been able to get it working but I would guess that when the client polls the API any modifications in the database will appear in the browser.
+Is this comments application the sort of application that should use an SQL or a noSQL database? Explain your answer.
+    I don't think it makes much of a difference what database we use. MongoDB seems to be a bit easier than SQL since we can just store what is essentially JSON right in the database. With SQL we could do the same with a string but I don't think thats the intended use.
