@@ -4,3 +4,10 @@ Compare and contrast your development and production deployments and explain how
     The production environment has some additional webpack optimizations and doesn't have the development server running to instantly display changes.
 List the optimizations you’ve configured for this production version and, if possible, find evidence of then in the deployed application files.
     There are new plugins for OccurenceOrder and UglifyJS. UglifyJS shortens the size of the JS by changing variable names and removing whitespace. The occurence order plugin optimizes the order of everything in the javascript.
+
+Exercise 11.2
+
+What advantage is there is deploying an application to a PaaS tool like Heroku?
+    You don't have to worry about any hardware or configuration beyond the configuration of your app.
+How does Heroku know how to install and run your application (after pulling it from the specified branch on GitHub)?
+    It checks for changes made to the github branch. If it finds changes, it will update.
