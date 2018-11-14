@@ -41,7 +41,7 @@ app.get('/api/comments', function (req, res) {
             console.error(err);
             process.exit(1);
         }
-        res.json(JSON.parse(data));
+        res.json(data);
     });
 });
 
@@ -52,7 +52,7 @@ app.post('/api/comments', function (req, res) {
             process.exit(1);
         }
 
-        var comments = JSON.parse(data);
+        var comment_data = data;
         // NOTE: In a real implementation, we would likely rely on a database or
         // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
         // treat Date.now() as unique-enough for our purposes.
@@ -61,13 +61,12 @@ app.post('/api/comments', function (req, res) {
             author: req.body.author,
             text: req.body.text,
         };
-        comments.push(newComment);
         comments.insertOne(newComment, function (err) {
             if (err) {
                 console.error(err);
                 process.exit(1);
             }
-            res.json(comments);
+            res.json(comment_data);
         });
     });
 });
@@ -75,7 +74,7 @@ app.post('/api/comments', function (req, res) {
 var MongoClient = require('mongodb').MongoClient;
 var db;
 var comments;
-MongoClient.connect('mongodb://cs336:bjarne1@ds151963.mlab.com:51963/tpt3-cs336', function (err, client) {
+MongoClient.connect('mongodb://cs336:' + process.env.MONGO_PASSWORD + '@ds151963.mlab.com:51963/tpt3-cs336', function (err, client) {
     if (err) throw err;
 
     db = client;
