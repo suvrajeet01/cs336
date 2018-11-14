@@ -1,0 +1,6 @@
+Exercise 11.1
+
+Compare and contrast your development and production deployments and explain how each is designed.
+    The production environment has some additional webpack optimizations and doesn't have the development server running to instantly display changes.
+List the optimizations you’ve configured for this production version and, if possible, find evidence of then in the deployed application files.
+    There are new plugins for OccurenceOrder and UglifyJS. UglifyJS shortens the size of the JS by changing variable names and removing whitespace. The occurence order plugin optimizes the order of everything in the javascript.
