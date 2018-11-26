@@ -1,0 +1,19 @@
+{
+  "name": "homework03",
+  "version": "1.0.0",
+  "description": "Homework 3 for CS 336",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tpt3",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "mongodb": "^2.2.19",
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1"
+  }
+}
